@@ -1,10 +1,10 @@
 body {
     height: 1;
     display: flex;
-    align-content: center;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     background-image: linear-gradient(to right, red, orange, rgb(228, 228, 27) 30%,
-        green, rgb(39, 39, 209), indigo, violet);
+            green, rgb(39, 39, 209), indigo, violet);
 }
 
 .TituloSeletor {
@@ -16,9 +16,12 @@ body {
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
+    font-family: 'Courier New', Courier, monospace
 }
 
 .ContainerSeletor {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.20), 0 2px 0 4px rgba(0, 0, 0, 0.08);
+    box-shadow: violet;
     width: 40%;
     min-width: 400px;
     max-height: 890px;
@@ -27,4 +30,21 @@ body {
     text-align: center;
     background-color: white;
     border-radius: 7px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.BntSeletores {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 55%;
+    height: 120px;
+    border-radius: 60px;
+    background-color: tomato;
+}
+.TitleJogos {
+    font-size: 300%;
+    font-family: 'Courier New', Courier, monospace;
 }
