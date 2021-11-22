@@ -10,7 +10,6 @@ body {
 .TituloSeletor {
     font-size: 3.6em;
     font-weight: bold;
-    text-align: center;
     text-transform: uppercase;
     background-image: url('/src/Images/Background-Image-Title.jpg');
     background-clip: text;
@@ -43,7 +42,9 @@ body {
     height: 120px;
     border-radius: 60px;
     background-color: tomato;
+    margin-bottom: 20px;
 }
+
 .TitleJogos {
     font-size: 300%;
     font-family: 'Courier New', Courier, monospace;
