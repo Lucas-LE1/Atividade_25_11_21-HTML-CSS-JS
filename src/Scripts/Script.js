@@ -1,4 +1,4 @@
-import { JogoForca0 } from "../Games/Forca.js";
+import { JogoForca0 } from "./Forca.js";
 
 var Jogos = ["Forca", 2, 3, 4];
 
@@ -23,7 +23,7 @@ for (let i = 0; i < Jogos.length; i++) {
   BntSeletores.appendChild(TitleJogos);
   TitleJogos.textContent = Jogos[i];
 }
-const bnts = document.querySelectorAll("button");
+const bnts = document.querySelectorAll("button.BntSeletores");
 
 bnts[0].onclick = () => {
   JogoForca0();
