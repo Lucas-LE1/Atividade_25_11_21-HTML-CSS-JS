@@ -1,0 +1,30 @@
+body {
+    height: 1;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    background-image: linear-gradient(to right, red, orange, rgb(228, 228, 27) 30%,
+        green, rgb(39, 39, 209), indigo, violet);
+}
+
+.TituloSeletor {
+    font-size: 3.6em;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    background-image: url('/src/Images/Background-Image-Title.jpg');
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.ContainerSeletor {
+    width: 40%;
+    min-width: 400px;
+    max-height: 890px;
+    height: 625px;
+    min-height: 400px;
+    text-align: center;
+    background-color: white;
+    border-radius: 7px;
+}
