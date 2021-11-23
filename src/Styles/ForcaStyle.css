@@ -1,0 +1,17 @@
+.contexto {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: left;
+    font-size: 90%;
+    font-weight: bold;
+    list-style-position: inside;
+    list-style-type: disc;
+    margin-bottom: 2%;
+}
+
+.divContexto {
+    display: flex;
+    width: 70%;
+    align-self: flex-start;
+    flex-direction: column;
+    margin-top: -4%;
+}
