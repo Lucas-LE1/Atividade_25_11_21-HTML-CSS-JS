@@ -1,6 +1,7 @@
 import { JogoForca0 } from "./Forca.js";
 
-var Jogos = ["Forca"];
+var Jogos = ["Forca",2,2];
+var JogosFunctions = [JogoForca0];
 
 var body = document.querySelector("body");
 body.style.height = window.innerHeight;
@@ -9,13 +10,11 @@ body.style.width = window.innerWidth;
 export var Container = document.createElement("div");
 Container.setAttribute("class", "Container");
 
-export var Titulos = document.createElement("h1");
-Titulos.setAttribute("class", "Titulos");
-Titulos.textContent = "Seleção De Jogos";
+export var Titulos = document.querySelector(".Titulos");
 body.appendChild(Container) && Container.appendChild(Titulos);
 
 for (let i = 0; i < Jogos.length; i++) {
-  var BntSeletores = document.createElement("button");
+  var BntSeletores = document.createElement("div");
   BntSeletores.setAttribute("class", "BntSeletores");
 
   var TitleJogos = document.createElement("p");
@@ -23,7 +22,7 @@ for (let i = 0; i < Jogos.length; i++) {
   Container.appendChild(BntSeletores) && BntSeletores.appendChild(TitleJogos);
   TitleJogos.textContent = Jogos[i];
 }
-const bnts = document.querySelectorAll("button.BntSeletores");
+const bnts = document.querySelectorAll("div.BntSeletores");
 
 for (let i = 0; i < bnts.length; i++) {
   bnts[i].onclick = () => {
@@ -32,6 +31,9 @@ for (let i = 0; i < bnts.length; i++) {
         JogoForca0();
         break;
     }
-    Container.removeChild(bnts[i]);
+    for (let i = 0; i < bnts.length; i++) {
+      Container.removeChild(bnts[i]);
+    }
   };
 }
+

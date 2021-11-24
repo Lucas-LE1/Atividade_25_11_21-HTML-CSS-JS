@@ -17,20 +17,21 @@ body {
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
-    font-family: 'Courier New', Courier, monospace
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .Container {
     box-shadow: violet;
     width: 40%;
-    min-width: 400px;
     min-height: 600px;
+    min-width: 400px;
     text-align: center;
     background-color: white;
     border-radius: 7px;
     display: flex;
     align-items: center;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .BntSeletores {
@@ -39,9 +40,11 @@ body {
     align-items: center;
     width: 55%;
     height: 120px;
-    border-radius: 60px;
+    border-radius: 20px;
     background-color: tomato;
     margin-bottom: 20px;
+    border-left-color: black;
+    user-select: none;
 }
 
 .TitleJogos {
