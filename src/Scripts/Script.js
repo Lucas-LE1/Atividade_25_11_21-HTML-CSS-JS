@@ -1,6 +1,6 @@
 import { JogoForca0 } from "./Forca.js";
 
-var Jogos = ["Forca",2,2];
+var Jogos = ["Forca"];
 var JogosFunctions = [JogoForca0];
 
 var body = document.querySelector("body");
