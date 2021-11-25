@@ -3,6 +3,7 @@ import { WordsForca } from "./WordsForcaScript.js";
 
 export function InicioJogo() {
   var Alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  Titulos.style = "font-size:380%;";
 
   var Detalhes = [
     "O jogador que tenta adivinhar a palavra deve ir dizendo as letras que podem existir na palavra.",
@@ -94,7 +95,7 @@ export function InicioJogo() {
           Container.style =
             "widht:50%;justify-content:center;align-items:center";
           Titulos.style = "font-size:230%;align-self";
-          Titulos.textContent = "Game Over\nPalavra:" + palavra;
+          Titulos.textContent = "Game Over\nPalavra:\n" + palavra;
           botaoReiniciar.addEventListener("click", () => {
             Container.removeChild(botaoReiniciar);
             InicioJogo();
