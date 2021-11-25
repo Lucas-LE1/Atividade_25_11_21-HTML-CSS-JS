@@ -105,7 +105,7 @@ export function InicioJogo() {
   }
   function SortearLetra() {
     let index2 = Math.floor(
-      Math.random() * WordsForca[index1].Words.length - 1
+      Math.random() * WordsForca[index1].Words.length
     );
     let palavra = WordsForca[index1].Words[index2].toUpperCase();
     var semAcento = palavra.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
