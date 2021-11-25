@@ -3,8 +3,6 @@ import { WordsForca } from "./WordsForcaScript.js";
 
 export function InicioJogo() {
   var Alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  Titulos.style = "font-size:380%";
-
   var Detalhes = [
     "O jogador que tenta adivinhar a palavra deve ir dizendo as letras que podem existir na palavra.",
     "Cada letra que ele acerta é escrita no espaço correspondente.",
@@ -42,7 +40,6 @@ export function InicioJogo() {
     CriarCorpo();
     var palavra = SortearLetra();
     let indexfinal = 0;
-    console.log(palavra);
     for (let i = 0; i < palavra.length; i++) {
       var divCaracter = document.createElement("div");
       divCaracter.setAttribute("class", "DivCaracter");
