@@ -38,7 +38,7 @@ divForca.appendChild(divTraçados);
 
 function criarTraçados() {
   CriarCorpo();
-  let palavra = SortearLetra();
+  var palavra = SortearLetra();
   let indexfinal = 0;
   console.log(palavra);
   for (let i = 0; i < palavra.length; i++) {
@@ -81,12 +81,20 @@ function criarTraçados() {
       if (TestePalavra == 0) {
         Vencedor();
       }
+      function ReinicarForca() {
+        Container.removeChild(divContexto);
+        Container.removeChild(divJogoForca);
+        Container.style = "widht:40%;justify-content:center;align-items:center";
+        Titulos.textContent = "Game Over\n"+palavra;
+      }
     });
   }
 }
 function SortearLetra() {
   let index2 = Math.floor(Math.random() * WordsForca[index1].Words.length);
-  return WordsForca[index1].Words[index2].toUpperCase();
+  let palavra = WordsForca[index1].Words[index2].toUpperCase();
+  var semAcento = palavra.normalize('NFD').replace(/[\u0300-\u036f]/g,);
+  return semAcento;
 }
 
 function CriarCorpo() {
@@ -112,12 +120,6 @@ function Vencedor() {
   Container.removeChild(divJogoForca);
   Container.style = "widht:40%;justify-content:center;align-items:center";
   Titulos.textContent = "GANHADOR";
-}
-function ReinicarForca() {
-  Container.removeChild(divContexto);
-  Container.removeChild(divJogoForca);
-  Container.style = "widht:40%;justify-content:center;align-items:center";
-  Titulos.textContent = "Game Over";
 }
 export function JogoForca0() {
   console.log("Jogo Da Forca");
