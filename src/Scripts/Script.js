@@ -1,7 +1,6 @@
-import { JogoForca0 } from "./Forca.js";
+import { InicioJogo} from "./Forca.js";
 
 var Jogos = ["Forca"];
-var JogosFunctions = [JogoForca0];
 
 var body = document.querySelector("body");
 body.style.height = window.innerHeight;
@@ -28,7 +27,7 @@ for (let i = 0; i < bnts.length; i++) {
   bnts[i].onclick = () => {
     switch (i) {
       case 0:
-        JogoForca0();
+        InicioJogo();
         break;
     }
     for (let i = 0; i < bnts.length; i++) {

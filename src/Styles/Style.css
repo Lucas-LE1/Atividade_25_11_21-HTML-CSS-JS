@@ -7,6 +7,8 @@ body {
 }
 
 .Titulos {
+    display: flex;
+    flex-direction: row;
     font-size: 380%;
     margin-top: 2%;
     margin-left: 1%;
