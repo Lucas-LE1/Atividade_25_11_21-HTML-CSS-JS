@@ -1,7 +1,9 @@
 import { Container, Titulos } from "./Script.js";
 import { WordsForca } from "./WordsForcaScript.js";
+import { DetectPhone } from './TesteDispositivo.js';
 
 export function InicioJogo() {
+  DetectPhone();
   var Alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   Titulos.style = "font-size:380%";
   var Detalhes = [
@@ -41,7 +43,7 @@ export function InicioJogo() {
     CriarCorpo();
     var palavra = SortearLetra();
     let indexfinal = 0;
-    for (let i = 0; i < palavra.length; i++) {
+    for (let i = 0; i < palavra[0].length; i++) {
       var divCaracter = document.createElement("div");
       divCaracter.setAttribute("class", "DivCaracter");
       var Caracter = document.createElement("p");
@@ -63,7 +65,7 @@ export function InicioJogo() {
     for (let index = 0; index < Letras.length; index++) {
       Letras[index].addEventListener("click", () => {
         divLetras.removeChild(Letras[index]);
-        if (palavra.search(Letras[index].innerHTML) === -1) {
+        if (palavra[0].search(Letras[index].innerHTML) === -1) {
           Corpo[indexfinal].style.visibility = "visible";
           indexfinal++;
           if (Corpo[5].style.visibility == "visible") {
@@ -71,8 +73,8 @@ export function InicioJogo() {
             ReinicarForca();
           }
         } else {
-          for (let i = 0; i < palavra.length; i++) {
-            if (palavra[i] == Letras[index].innerHTML) {
+          for (let i = 0; i < palavra[0].length; i++) {
+            if (palavra[0][i] == Letras[index].innerHTML) {
               Caracters[i].textContent = Letras[index].innerHTML;
               TestePalavra--;
             }
@@ -90,10 +92,9 @@ export function InicioJogo() {
           botaoReiniciar.innerHTML =
             "<p class=" + "TitleJogos" + ">Recomeçar<p/>";
           Container.appendChild(botaoReiniciar);
-          Container.style =
-            "widht:50%;justify-content:center;align-items:center";
+          Container.style ="justify-content:center;align-items:center";
           Titulos.style = "font-size:230%;";
-          Titulos.textContent = "Game Over\nPalavra:\n\n" + palavra;
+          Titulos.textContent = "Game Over\nPalavra:\n\n" + palavra[1];
           botaoReiniciar.addEventListener("click", () => {
             Container.removeChild(botaoReiniciar);
             InicioJogo();
@@ -108,7 +109,7 @@ export function InicioJogo() {
     );
     let palavra = WordsForca[index1].Words[index2].toUpperCase();
     var semAcento = palavra.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-    return semAcento;
+    return [semAcento,palavra];
   }
 
   function CriarCorpo() {
@@ -137,7 +138,7 @@ export function InicioJogo() {
     botaoReiniciar.style.width = "70%";
     botaoReiniciar.innerHTML = "<p class=" + "TitleJogos" + ">Recomeçar<p/>";
     Container.appendChild(botaoReiniciar);
-    Container.style = "widht:50%;justify-content:center;align-items:center";
+    Container.style = "justify-content:center;align-items:center";
     Titulos.textContent = "GANHADOR";
     botaoReiniciar.addEventListener("click", () => {
       Container.removeChild(botaoReiniciar);
@@ -149,7 +150,6 @@ export function InicioJogo() {
   Container.appendChild(divJogoForca);
   divJogoForca.appendChild(divForca);
   divJogoForca.appendChild(divLetras);
-  Container.style.width = "60%";
   Titulos.textContent = "Jogo Da Forca";
   criarTraçados();
 }
