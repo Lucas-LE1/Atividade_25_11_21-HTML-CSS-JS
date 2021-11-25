@@ -3,7 +3,7 @@ import { WordsForca } from "./WordsForcaScript.js";
 
 export function InicioJogo() {
   var Alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  Titulos.style = "font-size:380%;";
+  Titulos.style = "font-size:380%";
 
   var Detalhes = [
     "O jogador que tenta adivinhar a palavra deve ir dizendo as letras que podem existir na palavra.",
@@ -94,7 +94,7 @@ export function InicioJogo() {
           Container.appendChild(botaoReiniciar);
           Container.style =
             "widht:50%;justify-content:center;align-items:center";
-          Titulos.style = "font-size:230%;align-self";
+          Titulos.style = "font-size:230%;";
           Titulos.textContent = "Game Over\nPalavra:\n" + palavra;
           botaoReiniciar.addEventListener("click", () => {
             Container.removeChild(botaoReiniciar);
@@ -106,7 +106,7 @@ export function InicioJogo() {
   }
   function SortearLetra() {
     let index2 = Math.floor(
-      Math.random() * WordsForca[index1].Words.length + 1
+      Math.random() * WordsForca[index1].Words.length + 0.5;
     );
     let palavra = WordsForca[index1].Words[index2].toUpperCase();
     var semAcento = palavra.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
