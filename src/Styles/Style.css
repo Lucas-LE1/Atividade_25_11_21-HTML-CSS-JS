@@ -23,9 +23,7 @@ body {
 
 .Container {
     box-shadow: violet;
-    width: 40%;
     min-height: 600px;
-    min-width: 400px;
     text-align: center;
     background-color: white;
     border-radius: 7px;
