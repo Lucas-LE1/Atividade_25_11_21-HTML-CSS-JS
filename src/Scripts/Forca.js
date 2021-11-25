@@ -93,7 +93,7 @@ export function InicioJogo() {
           Container.style =
             "widht:50%;justify-content:center;align-items:center";
           Titulos.style = "font-size:230%;";
-          Titulos.textContent = "Game Over\nPalavra:\n" + palavra;
+          Titulos.textContent = "Game Over\nPalavra:\n\n" + palavra;
           botaoReiniciar.addEventListener("click", () => {
             Container.removeChild(botaoReiniciar);
             InicioJogo();
@@ -104,9 +104,10 @@ export function InicioJogo() {
   }
   function SortearLetra() {
     let index2 = Math.floor(
-      Math.random() * WordsForca[index1].Words.length + 0.5;
+      Math.random() * WordsForca[index1].Words.length - 1
     );
     let palavra = WordsForca[index1].Words[index2].toUpperCase();
+    console.log(palavra)
     var semAcento = palavra.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
     return semAcento;
   }
