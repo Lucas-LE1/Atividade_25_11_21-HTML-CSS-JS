@@ -111,7 +111,7 @@ function Vencedor() {
   Container.removeChild(divContexto);
   Container.removeChild(divJogoForca);
   Container.style = "widht:40%;justify-content:center;align-items:center";
-  Titulos.textContent = "Voçe ganhou";
+  Titulos.textContent = "GANHADOR";
 }
 function ReinicarForca() {
   Container.removeChild(divContexto);
