@@ -79,6 +79,7 @@ function criarTraçados() {
         }
       }
       if (TestePalavra == 0) {
+        Vencedor();
       }
     });
   }
@@ -106,11 +107,15 @@ function CriarCorpo() {
   DivPernas.appendChild(document.querySelector(".Canva4"));
   DivPernas.appendChild(document.querySelector(".Canva5"));
 }
-
+function Vencedor() {
+  Container.removeChild(divContexto);
+  Container.removeChild(divJogoForca);
+  Container.style = "widht:40%;justify-content:center;align-items:center";
+  Titulos.textContent = "Voçe ganhou";
+}
 function ReinicarForca() {
   Container.removeChild(divContexto);
   Container.removeChild(divJogoForca);
-  let botaoReiniciar = document.createElement("div");
   Container.style = "widht:40%;justify-content:center;align-items:center";
   Titulos.textContent = "Game Over";
 }
