@@ -39,7 +39,82 @@
     display: flex;
     width: 100%;
     height: 100%;
+    flex-direction: column;
     background-color: white;
+}
+
+.DivTronco {
+    display: flex;
+    margin-bottom: -4%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    height: 50%;
+}
+
+.DivPernas {
+    height: 100%;
+    width: 100%;
+}
+
+.Canva0 {
+    display: flex;
+    margin-top: 5%;
+    visibility: hidden;
+    align-self: center;
+    width: 15%;
+    height: 35%;
+    border: 2px solid;
+    border-radius: 50%;
+}
+
+.Canva1 {
+    margin-right: 4%;
+    visibility: hidden;
+    height: 105%;
+    width: 2%;
+    transform: rotate(28deg);
+    border: 2px solid;
+}
+
+.Canva2 {
+    width: 3%;
+    visibility: hidden;
+    height: 100%;
+    border: 2px solid;
+    background-color: black;
+    border-radius: 10px;
+}
+
+.Canva3 {
+    height: 105%;
+    width: 2%;
+    visibility: hidden;
+    transform: rotate(-28deg);
+    border: 2px solid;
+    margin-left: 3.6%;
+
+}
+
+.Canva4 {
+
+    height: 60%;
+    visibility: hidden;
+    width: 2%;
+    transform: rotate(16deg);
+    border: 2px solid;
+    margin-right: 2.5%;
+
+}
+
+.Canva5 {
+    height: 60%;
+    visibility: hidden;
+    width: 2%;
+    transform: rotate(-16deg);
+    border: 2px solid;
+    margin-left: 2.5%;
 }
 
 .divTraçados {
@@ -51,6 +126,7 @@
     align-items: center;
     width: 100%;
     height: 25%;
+    user-select: none;
 }
 
 .divLetras {

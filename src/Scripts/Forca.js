@@ -37,7 +37,9 @@ divTraçados.setAttribute("class", "divTraçados");
 divForca.appendChild(divTraçados);
 
 function criarTraçados() {
+  CriarCorpo();
   let palavra = SortearLetra();
+  let indexfinal = 0;
   console.log(palavra);
   for (let i = 0; i < palavra.length; i++) {
     var divCaracter = document.createElement("div");
@@ -55,12 +57,19 @@ function criarTraçados() {
     Letra.textContent = Alfabeto[i];
   }
   const Letras = document.querySelectorAll("div.Letra");
+  const Corpo = document.querySelectorAll("canvas");
+  console.log(Corpo.length);
 
   for (let index = 0; index < Letras.length; index++) {
     Letras[index].addEventListener("click", () => {
       divLetras.removeChild(Letras[index]);
-
-      if (palavra.search(Letras[index].innerHTML) == -1) {
+      if (palavra.search(Letras[index].innerHTML) === -1) {
+        Corpo[indexfinal].style.visibility = "visible";
+        indexfinal++;
+        if (Corpo[5].style.visibility == "visible") {
+          console.log("Voçe Perdeu!");
+          ReinicarForca();
+        }
       } else {
         for (let i = 0; i < palavra.length; i++) {
           if (palavra[i] == Letras[index].innerHTML) {
@@ -69,7 +78,7 @@ function criarTraçados() {
           }
         }
       }
-      if (TestePalavra==0) {
+      if (TestePalavra == 0) {
       }
     });
   }
@@ -79,6 +88,32 @@ function SortearLetra() {
   return WordsForca[index1].Words[index2].toUpperCase();
 }
 
+function CriarCorpo() {
+  for (let i = 0; i < 6; i++) {
+    var Canvas1 = document.createElement("canvas");
+    Canvas1.setAttribute("class", "Canva" + i);
+    divCorpo.appendChild(Canvas1);
+  }
+  var DivTronco = document.createElement("div");
+  var DivPernas = document.createElement("div");
+  divCorpo.appendChild(DivTronco);
+  divCorpo.appendChild(DivPernas);
+  DivTronco.setAttribute("class", "DivTronco");
+  DivPernas.setAttribute("class", "DivPernas");
+  DivTronco.appendChild(document.querySelector(".Canva1"));
+  DivTronco.appendChild(document.querySelector(".Canva2"));
+  DivTronco.appendChild(document.querySelector(".Canva3"));
+  DivPernas.appendChild(document.querySelector(".Canva4"));
+  DivPernas.appendChild(document.querySelector(".Canva5"));
+}
+
+function ReinicarForca() {
+  Container.removeChild(divContexto);
+  Container.removeChild(divJogoForca);
+  let botaoReiniciar = document.createElement("div");
+  Container.style = "widht:40%;justify-content:center;align-items:center";
+  Titulos.textContent = "Game Over";
+}
 export function JogoForca0() {
   console.log("Jogo Da Forca");
   Container.appendChild(divContexto);
