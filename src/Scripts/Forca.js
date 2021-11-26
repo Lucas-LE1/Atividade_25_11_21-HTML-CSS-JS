@@ -131,7 +131,6 @@ export function InicioJogo() {
     DivPernas.appendChild(document.querySelector(".Canva5"));
   }
   function Vencedor() {
-    DetectPhone();
     Container.removeChild(divContexto);
     Container.removeChild(divJogoForca);
     var botaoReiniciar = document.createElement("div");
