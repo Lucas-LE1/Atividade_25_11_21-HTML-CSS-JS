@@ -75,7 +75,7 @@ export function InicioJogo() {
         } else {
           for (let i = 0; i < palavra[0].length; i++) {
             if (palavra[0][i] == Letras[index].innerHTML) {
-              Caracters[i].textContent = Letras[index].innerHTML;
+              Caracters[i].textContent = palavra[1][i];
               TestePalavra--;
             }
           }
@@ -105,7 +105,7 @@ export function InicioJogo() {
   }
   function SortearLetra() {
     let index2 = Math.floor(
-      Math.random() * WordsForca[index1].Words.length - 1
+      Math.random() * WordsForca[index1].Words.length
     );
     let palavra = WordsForca[index1].Words[index2].toUpperCase();
     var semAcento = palavra.normalize("NFD").replace(/[\u0300-\u036f]/g, "");

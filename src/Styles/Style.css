@@ -22,8 +22,8 @@ body {
 }
 
 .Container {
-    box-shadow: violet;
     min-height: 600px;
+    min-width: 400px;
     text-align: center;
     background-color: white;
     border-radius: 7px;
