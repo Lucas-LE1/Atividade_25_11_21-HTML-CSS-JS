@@ -75,7 +75,7 @@ export function InicioJogo() {
         } else {
           for (let i = 0; i < palavra[0].length; i++) {
             if (palavra[0][i] == Letras[index].innerHTML) {
-              Caracters[i].textContent = Letras[index].innerHTML;
+              Caracters[i].textContent = palavra[1][i];
               TestePalavra--;
             }
           }
